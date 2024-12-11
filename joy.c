@@ -29,7 +29,7 @@ int joystick() {
     int Val1 = 0;
     int Val3 = 0; 
 
-    while(1){
+  while(1){
         //printf("[%d] ", cnt); 
         wiringPiI2CWrite(i2c_fd, 0x40 | 1);
         preVal0= wiringPiI2CRead(i2c_fd);
