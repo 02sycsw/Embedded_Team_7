@@ -9,6 +9,8 @@ int hitFlag;
 int curNote;
 int point = 0;
 
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+
 void initQueue(Queue *q) {
     q->front = 0;
     q->rear = 15;
@@ -111,7 +113,8 @@ void setLCDColor(int r, int g, int b) {
 }
 
 void checkStrikeZone(Queue *q, int joyFlag) {
-    // strikeZone은 중앙 위치 (STRIKE_ZONE_INDEX로 정의되어 있다고 가정)
+    pthread_mutex_lock(&lock); // mutex 잠금
+
     char strikeChar = q->data[STRIKE_ZONE_INDEX];
     int strikeValue = (int)strikeChar;
 
@@ -130,7 +133,10 @@ void checkStrikeZone(Queue *q, int joyFlag) {
         setLCDColor(0, 0, 255); // 파랑 idle
         hitFlag = 0;
     }
+
+    pthread_mutex_unlock(&lock); // mutex 해제
 }
+
 
 void displayPointOnLCD() {
     char line1[16];  // LCD의 첫 번째 줄 (최대 16자)
