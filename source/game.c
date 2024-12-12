@@ -77,7 +77,7 @@ int main() {
 
     int ret;
     displayPointOnLCD();
-    if(point > 40) ret = system("/home/pi/embedded/proj/test");
+    if(point > 40) ret = system("/home/pi/embedded/proj/open");
 
     return 0;
 }
