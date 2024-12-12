@@ -1,11 +1,28 @@
 # Embedded_Team_7
 Repository for Embedded Project
+프로젝트 명: 밀어서 잠금해제
 
 시연 영상: https://youtube.com/shorts/OWIvqjtxvhY
 
+**[ Compile ]**
+make
 
-**[ source directory ]**
 
+**[ Execute ]**  
+동작을 시작할 때 - ./game
+문을 닫을 때 - ./close
+
+
+**[ How to use ]**
+1. game 파일을 실행시킨 뒤, NFC 칩을 NFC 센서에 태그하여 게임 시작.
+2. LCD 화면에 나오는 노트를 보고 조이스틱을 움직임.
+   L(eft) / R(ight) / U(p) / D(own) 에 맞춰서 스트라이크존에 노트가 지나갈 때 타이밍을 맞춰서 플레이.
+3. 점수 threshold인 40점을 넘기면 서보 모터에 연결된 문이 열림.
+4. 안에 있는 리워드를 꺼내고 나면 close 파일을 실행시켜 문을 닫음.
+  
+
+**[ Source directory ]**
+  
 **Final Source Code**
 
 Makefile: 디렉터리 내에 있는 소스 파일을 일괄적으로 빌드할 수 있는 규칙 포함
@@ -20,22 +37,23 @@ game.c: NFC, 조이스틱, 부저, LCD와 같은 센서와 액추에이터를 �
   : 점수 - 스트라이크존 비교를 통해 점수를 계산하고 최종 점수를 LCD에 출력
            일정 점수 이상일 경우 추가 프로그램(test)를 실행.
   : 종료 - 음악 데이터를 모두 처리하면, 스레드를 정리하고 프로그램이 종료.
-i2c.c:
-joy.c:
-nfc.c:
-queue.c:
-
-spk.c: 
+joy.c: I2C 통신을 이용하여 조이스틱의 입력 데이터를 읽고, 해당 입력에 따라 플래그를 설정하는 프로그램.
+nfc.c: NFC의 UID를 감지하고 UID를 문자열로 변환하는 프로그램.
+queue.c: LCD와 queue를 활용하여 음악 노트와 조이스틱 입력을 비교하여 점수를 계산하고 표시하는 프로그램. 
+spk.c: 부저로 주파수에 해당하는 특정 음을 출력하는 프로그램. 
+       음계와 노트를 비교하여 주파수를 가져온다.
 srvMt.c: PWM을 이용하여 서보 모터를 구동시키는 코드. 서보 모터의 초기화 및 각도에 따라 서보 모터를 회전시키는 함수를 구현. 
   : initServo - 서보 모터를 초기화하고 기본 설정을 함.
   : setServoAngle - 서보 모터를 특정 각도로 이동. 0~180인지 확인 후 PWM 값을 계산하고 서보 모터를 움직임. 
-test.c: pwm 동작을 위한 코드
-
-
-
-
+open.c: 문을 여는 서보모터 동작을 위한 코드.
+close.c: 문을 닫는 서보모터 동작을 위한 코드.
+  
+  
+  
+  
 **For Test**
 
+i2c.c: NFC 태그를 감지하고, 태그의 UID를 읽는 코드. 
 rhythm_game.c: 버튼 입력에 따라 음악 노트를 큐로 처리하여 LCD 백라이트의 RGB 값을 제어하는 프로그램.
   : Queue 관련 함수들 - 음악 배열에서 데이터를 가져와 최대 16개의 데이터를 저장하며 순차적으로 삽입(enqueue) 및 제거(dequeue) 가능.
     music 배열의 데이터(1~8)을 큐에 mapping하여 각 값을 문자(LRUD)로 변환. 
