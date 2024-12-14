@@ -4,7 +4,12 @@ Repository for Embedded Project
 
 시연 영상: https://youtube.com/shorts/OWIvqjtxvhY
 
-**[ Compile ]**
+
+**[ Sensors and Actuators Used ]**
+서보 모터, 조이스틱, ADC 컨버터, LCD 디스플레이, NFC reader, 수동 부저
+  
+
+**[ How to Compile ]**
 make
 
 
@@ -13,15 +18,15 @@ make
 문을 닫을 때 - ./close
 
 
-**[ How to use ]**
-1. game 파일을 실행시킨 뒤, NFC 칩을 NFC 센서에 태그하여 게임 시작.
+**[ How to Use ]**
+1. bash에서 game 파일을 실행시킨 뒤, NFC 칩을 NFC 센서에 태그하여 게임 시작.
 2. LCD 화면에 나오는 노트를 보고 조이스틱을 움직임.
    L(eft) / R(ight) / U(p) / D(own) 에 맞춰서 스트라이크존에 노트가 지나갈 때 타이밍을 맞춰서 플레이.
 3. 점수 threshold인 40점을 넘기면 서보 모터에 연결된 문이 열림.
-4. 안에 있는 리워드를 꺼내고 나면 close 파일을 실행시켜 문을 닫음.
+4. 안에 있는 리워드를 꺼내고 나면 close 파일을 bash에서 실행시켜 문을 닫음.
   
 
-**[ Source directory ]**
+**[ Source Directory ]**
   
 **Final Source Code**
 
@@ -35,7 +40,7 @@ game.c: NFC, 조이스틱, 부저, LCD와 같은 센서와 액추에이터를 �
                  입출력을 병렬로 처리하기 위해 2개의 스레드 생성.
   : 음악 처리 - 음악 데이터를 queue로 관리하고, 입력과 비교하여 성패를 판단.
   : 점수 - 스트라이크존 비교를 통해 점수를 계산하고 최종 점수를 LCD에 출력
-           일정 점수 이상일 경우 추가 프로그램(test)를 실행.
+           일정 점수 이상일 경우 추가 프로그램(open)를 실행.
   : 종료 - 음악 데이터를 모두 처리하면, 스레드를 정리하고 프로그램이 종료.
 joy.c: I2C 통신을 이용하여 조이스틱의 입력 데이터를 읽고, 해당 입력에 따라 플래그를 설정하는 프로그램.
 nfc.c: NFC의 UID를 감지하고 UID를 문자열로 변환하는 프로그램.
