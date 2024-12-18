@@ -24,22 +24,25 @@ make
 문을 닫을 때 - ./close
 <br>
 <br>
-**[ How to Use ]**
+<br>
+**[ How to Use ]** <br>
 1. bash에서 game 파일을 실행시킨 뒤, NFC 칩을 NFC 센서에 태그하여 게임 시작.
 2. LCD 화면에 나오는 노트를 보고 조이스틱을 움직임.
    L(eft) / R(ight) / U(p) / D(own) 에 맞춰서 스트라이크존에 노트가 지나갈 때 타이밍을 맞춰서 플레이.
 3. 점수 threshold인 40점을 넘기면 서보 모터에 연결된 문이 열림.
 4. 안에 있는 리워드를 꺼내고 나면 close 파일을 bash에서 실행시켜 문을 닫음.
+<br>
+<br>
+<br>
+<br>
+**[ Source Directory ]** <br>
   
-
-**[ Source Directory ]**
-  
-**Final Source Code**
-
+**Final Source Code** <br>
+<br>
 Makefile: 디렉터리 내에 있는 소스 파일을 일괄적으로 빌드할 수 있는 규칙 포함
-
+<br>
 func.h: 필요한 헤더 파일, 상수, 큐를 포함한 구조체, 함수 헤더, 전역 변수 선언
-
+<br>
 game.c: NFC, 조이스틱, 부저, LCD와 같은 센서와 액추에이터를 제어 하여 리듬 게임을 구현.
   : NFC - NFC reader를 초기화하여 태그 감지를 대기하고, 태그를 감지하면 UID를 읽어옴.
   : 멀티스레드 - 조이스틱 입력을 처리하는 input용 스레드 / 소리(부저) 관련으로 처리하는 output용 스레드
