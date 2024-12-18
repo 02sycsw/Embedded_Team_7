@@ -35,8 +35,8 @@ make
 <br>
 <br>
 <br> 
-**[ Source Directory ]** <br>
-  
+**[ Source Directory ]**
+<br>
 **Final Source Code** <br>
 <br>
 Makefile: 디렉터리 내에 있는 소스 파일을 일괄적으로 빌드할 수 있는 규칙 포함
@@ -58,7 +58,7 @@ spk.c: 부저로 주파수에 해당하는 특정 음을 출력하는 프로그�
        음계와 노트를 비교하여 주파수를 가져온다.<br>
 srvMt.c: PWM을 이용하여 서보 모터를 구동시키는 코드. 서보 모터의 초기화 및 각도에 따라 서보 모터를 회전시키는 함수를 구현. <br>
   : initServo - 서보 모터를 초기화하고 기본 설정을 함.<br>
-  : setServoAngle - 서보 모터를 특정 각도로 이동. 0~180인지 확인 후 PWM 값을 계산하고 서보 모터를 움직임. <br>
+  : setServoAngle - 서보 모터를 특정 각도로 이동. 0 ~ 180인지 확인 후 PWM 값을 계산하고 서보 모터를 움직임. <br>
 open.c: 문을 여는 서보모터 동작을 위한 코드. <br>
 close.c: 문을 닫는 서보모터 동작을 위한 코드. <br> 
 <br>
@@ -70,7 +70,7 @@ close.c: 문을 닫는 서보모터 동작을 위한 코드. <br>
 i2c.c: NFC 태그를 감지하고, 태그의 UID를 읽는 코드. <br>
 rhythm_game.c: 버튼 입력에 따라 음악 노트를 큐로 처리하여 LCD 백라이트의 RGB 값을 제어하는 프로그램. <br>
   : Queue 관련 함수들 - 음악 배열에서 데이터를 가져와 최대 16개의 데이터를 저장하며 순차적으로 삽입(enqueue) 및 제거(dequeue) 가능. <br>
-    music 배열의 데이터(1~8)을 큐에 mapping하여 각 값을 문자(LRUD)로 변환. <br>
+    music 배열의 데이터(1 ~ 8)을 큐에 mapping하여 각 값을 문자(LRUD)로 변환. <br>
   : progressQueue: 음악 배열에서 데이터를 하나씩 큐로 이동시키고 화면에 표시.<br>
   <br>
   : inputThread: 입력 처리 스레드. 버튼 입력 상태를 관리하며 버튼이 눌리면 flag를 설정. 디바운싱을 위해 딜레이를 추가해둠.<br>
