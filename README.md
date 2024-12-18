@@ -35,9 +35,11 @@ make
 <br>
 <br>
 <br> 
-**[ Source Directory ]**
+**[ Source Directory ]** 
 <br>
-**Final Source Code** <br>
+<br>
+**Final Source Code** 
+<br>
 <br>
 Makefile: 디렉터리 내에 있는 소스 파일을 일괄적으로 빌드할 수 있는 규칙 포함
 <br>
@@ -79,8 +81,8 @@ rhythm_game.c: 버튼 입력에 따라 음악 노트를 큐로 처리하여 LCD 
     LCD 백라이트의 RGB 값을 변경시켜 제어. <br>
       성공 시 - 녹색(0, 255, 0) / 실패 시 붉은색(255, 0, 0) / 기본 상태는 푸른색(0, 0, 255)<br>
    <br>   
-  : 주요 루프
-    메인 루프 - 콘솔과 LCD에 현재 queue 상태 출력.
-                input_flag를 확인하여 현재 queue 스트라이크존 문자와 비교한 후, 성패에 따라 LCD 백라이트의 RGB 값을 변경.
-                0.25초 대기 후 반복. 
-    종료 조건 - 준비된 음악 배열이 끝나면 프로그램 종료.
+  : 주요 루프 <br>
+    메인 루프 - 콘솔과 LCD에 현재 queue 상태 출력. <br>
+                input_flag를 확인하여 현재 queue 스트라이크존 문자와 비교한 후, 성패에 따라 LCD 백라이트의 RGB 값을 변경. <br>
+                0.25초 대기 후 반복.  <br>
+    종료 조건 - 준비된 음악 배열이 끝나면 프로그램 종료. <br>
