@@ -1,5 +1,6 @@
 # Embedded_Team_7
 Repository for Embedded Project
+<br>
 프로젝트 명: 밀어서 잠금해제
 <br>
 시연 영상: https://youtube.com/shorts/OWIvqjtxvhY
@@ -7,18 +8,17 @@ Repository for Embedded Project
 <br>
 **[ Sensors and Actuators Used ]** <br>
 서보 모터, 조이스틱, ADC 컨버터, LCD 디스플레이, NFC reader, 수동 부저
-  
-  
-**[ How to Compile ]**
-
+<br>
+<br>
+**[ How to Compile ]** <br>
 make
-  
-  
-**[ Execute ]**  
+<br>
+<br>
+**[ Execute ]** <br>
 동작을 시작할 때 - ./game
 문을 닫을 때 - ./close
-
-
+<br>
+<br>
 **[ How to Use ]**
 1. bash에서 game 파일을 실행시킨 뒤, NFC 칩을 NFC 센서에 태그하여 게임 시작.
 2. LCD 화면에 나오는 노트를 보고 조이스틱을 움직임.
