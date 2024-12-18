@@ -35,12 +35,10 @@ make
 <br>
 <br>
 <br> 
-**[ Source Directory ]**
-
+**[ Source Directory ]** 
 <br>
 <br>
-**Final Source Code** 
-
+**Final Source Code**
 <br>
 <br>
 Makefile: 디렉터리 내에 있는 소스 파일을 일괄적으로 빌드할 수 있는 규칙 포함
@@ -69,7 +67,7 @@ close.c: 문을 닫는 서보모터 동작을 위한 코드. <br>
 <br>
 <br>
 <br>
-**For Test** 
+**For Test**
 <br>
 <br>
 i2c.c: NFC 태그를 감지하고, 태그의 UID를 읽는 코드. <br>
