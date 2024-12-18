@@ -1,12 +1,11 @@
 # Embedded_Team_7
 Repository for Embedded Project
 프로젝트 명: 밀어서 잠금해제
-
+|
 시연 영상: https://youtube.com/shorts/OWIvqjtxvhY
-  
-  
-**[ Sensors and Actuators Used ]**
-
+|
+| 
+**[ Sensors and Actuators Used ]**|
 서보 모터, 조이스틱, ADC 컨버터, LCD 디스플레이, NFC reader, 수동 부저
   
   
