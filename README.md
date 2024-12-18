@@ -6,8 +6,6 @@ Repository for Embedded Project
 
 시연 영상: [YouTube 링크](https://youtube.com/shorts/OWIvqjtxvhY)
 
----
-
 #### [ Sensors and Actuators Used ]
 - 서보 모터
 - 조이스틱
@@ -16,8 +14,6 @@ Repository for Embedded Project
 - NFC 리더
 - 수동 부저
 
----
-
-####[ How to Compile ]####
+#### [ How to Compile ]
 ```bash
 make
